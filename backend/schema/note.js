@@ -15,9 +15,14 @@ const Note = sequelize.define("Note", {
     type: DataTypes.TEXT,
     allowNull: false,
   },
+  createdAt: {
+  type: DataTypes.DATE,
+  allowNull: false,
+  defaultValue: DataTypes.NOW
+}
 }, {
   tableName: "notes",
-  timestamps: false,
+  timestamps: true,
 });
 
 module.exports = Note;
