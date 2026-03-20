@@ -20,6 +20,12 @@ Project ini telah diintegrasikan dengan **Cloud Computing** menggunakan **Google
 * 🌐 Routing frontend menggunakan React Router
 
 ---
+## 📸 Tampilan Aplikasi
+
+### 🏠 Halaman Utama
+![Home](gambar/ui.jpg)
+
+---
 
 ## 🛠️ Teknologi yang Digunakan
 
