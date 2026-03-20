@@ -23,7 +23,7 @@ Project ini telah diintegrasikan dengan **Cloud Computing** menggunakan **Google
 ## 📸 Tampilan Aplikasi
 
 ### 🏠 Halaman Utama
-![Home](gambar/ui.jpg)
+![Home](gambar/ui.JPG)
 
 ---
 
