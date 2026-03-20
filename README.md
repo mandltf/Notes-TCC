@@ -50,7 +50,7 @@ Project ini telah diintegrasikan dengan **Cloud Computing** menggunakan **Google
 ### 1. Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/mandltf/Notes-TCC
 cd notes-app
 ```
 
