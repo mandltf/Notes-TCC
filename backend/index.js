@@ -7,7 +7,7 @@ const app = express();
 const cors = require("cors");
 
 app.use(cors({
-  origin: "*",
+  origin: "https://b-12-488514.uc.r.appspot.com",
   methods: ["GET", "POST", "PUT", "DELETE"],
 }));
 app.use(express.json());
