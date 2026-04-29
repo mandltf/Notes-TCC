@@ -6,8 +6,8 @@ steps:
       - '-t'
       - 'gcr.io/$PROJECT_ID/notes-backend'
       - '-f'
-      - 'Dockerfile'
-      - '.'
+      - 'backend/Dockerfile'   
+      - 'backend'            
 
   # Push image
   - name: 'gcr.io/cloud-builders/docker'
