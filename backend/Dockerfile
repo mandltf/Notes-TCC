@@ -1,6 +1,16 @@
 FROM node:20-alpine
 WORKDIR /app
-COPY . .
+
+# copy package dulu
+COPY package*.json ./
+
+# install dependency
 RUN npm install
-EXPOSE 3000
+
+# copy semua file
+COPY . .
+
+# Cloud Run pakai port 8080
+EXPOSE 8080
+
 CMD ["node", "index.js"]
