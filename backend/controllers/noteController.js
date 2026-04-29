@@ -4,8 +4,9 @@ const getAllNotes = async (req, res) => {
   try {
     const notes = await noteModel.findAllNotes();
     res.json(notes);
-  } catch (error) {
-    res.status(500).json({ error: "Failed to retrieve notes" });
+  } catch (err) {
+    console.error('DB ERROR:', err);
+    res.status(500).json({ error: err.message });
   }
 };
 
