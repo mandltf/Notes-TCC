@@ -1,0 +1,26 @@
+steps:
+  # Build image dari Dockerfile
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/notes-backend', '.']
+
+  # Push image ke Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/notes-backend']
+
+  # Deploy ke Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      [
+        'run', 'deploy', 'notes-backend',
+        '--image', 'gcr.io/$PROJECT_ID/notes-backend',
+        '--platform', 'managed',
+        '--region', 'us-central1',
+        '--allow-unauthenticated'
+      ]
+
+images:
+  - 'gcr.io/$PROJECT_ID/notes-backend'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
