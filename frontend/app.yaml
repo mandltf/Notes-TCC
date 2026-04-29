@@ -1,0 +1,16 @@
+runtime: nodejs20
+
+handlers:
+  # Serve static assets (JS, CSS, images)
+  - url: /assets
+    static_dir: dist/assets
+
+  # Serve favicon or other root files
+  - url: /(.*\.(json|ico|js|css|png|jpg|svg))
+    static_files: dist/\1
+    upload: dist/(.*\.(json|ico|js|css|png|jpg|svg))
+
+  # Serve index.html for all routes (SPA support)
+  - url: /.*
+    static_files: dist/index.html
+    upload: dist/index.html
