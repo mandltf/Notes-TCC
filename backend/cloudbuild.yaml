@@ -1,7 +1,13 @@
 steps:
-  # Build image dari Dockerfile
+  # Build image dari Dockerfile di folder backend
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/notes-backend', '.']
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/notes-backend'
+      - '-f'
+      - 'backend/Dockerfile'
+      - '.'
 
   # Push image ke Container Registry
   - name: 'gcr.io/cloud-builders/docker'
