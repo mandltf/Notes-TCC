@@ -1,19 +1,21 @@
 steps:
-  # Build image dari Dockerfile di folder backend
+  # Build image (context backend)
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'build'
       - '-t'
       - 'gcr.io/$PROJECT_ID/notes-backend'
       - '-f'
-      - 'backend/Dockerfile'
+      - 'Dockerfile'
       - '.'
 
-  # Push image ke Container Registry
+  # Push image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/notes-backend']
+    args:
+      - 'push'
+      - 'gcr.io/$PROJECT_ID/notes-backend'
 
-  # Deploy ke Cloud Run
+  # Deploy Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args:
