@@ -1,5 +1,5 @@
 runtime: nodejs20
-service: default
+service: notes-manda
 
 handlers:
   # Serve static assets (JS, CSS, images)
